@@ -32,6 +32,7 @@
      		<h4 class = "search_title">최근검색어</h4>
      		<span class="btn">모두지우기</span>
      	</div>
+     	<p class = "search_"></p>
      </div>
  </div>
 </body>
