@@ -38,6 +38,21 @@
      			</c:forEach>
      		</c:if>
      	</div>
+     	<%-- <div id="sidebar_location">
+	      <div class="location" data-lat="33.4588" data-lng="126.9423">
+	         <img
+	            src="<%=request.getContextPath()%>/resources/images/markerbackground/jeju1.jpg"
+	            alt="제주도1">
+	         <p>제주도 관광지 1</p>
+	      </div>
+	      <div class="location" data-lat="33.489011" data-lng="126.498302">
+	         <img
+	            src="<%=request.getContextPath()%>/resources/images/markerbackground/jeju2.jpg"
+	            alt="제주도2">
+	         <p>제주도 관광지 2</p>
+	      </div>
+	      <!-- More locations can be added here -->
+  		 </div> --%>
      </div>
  </div>
 </body>

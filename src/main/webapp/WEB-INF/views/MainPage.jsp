@@ -81,7 +81,7 @@
                 	손쉽게 일정을  조정하세요.
             </p>
             <div class="button-container">
-                <button class="btn">일정짜기</button>
+                <button class="btn" onclick="location.href='tmap.go'">일정 만들기</button>
                 <button class="btn">이용 가이드</button>
             </div>
         </div>

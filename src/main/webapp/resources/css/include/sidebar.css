@@ -64,7 +64,19 @@
 	background-color: white;
 	height: 90%;
 }
+#sidebar_location {
+    background-color: black;
+    /* 기존 스타일 속성 */
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    z-index: 9999;
+}
 
+#sidebar_location p {
+    color: white; 
+}
 
 /*사이드바 2*/
 .sidebar2 {
@@ -129,3 +141,4 @@
 	transition: margin-left 0.4s;
 	padding: 16px;
 }
+

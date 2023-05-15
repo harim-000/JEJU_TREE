@@ -21,17 +21,10 @@
 }
 
 #map_div {
-	display : flex;
-	justify-content:center;
-    /* margin-left: 25%; /* this should match the width of the sidebar */
-   /* margin-right: 25%; */
-    width: 50%; /* this is the remaining width */
-    height: 100%;
-    margin-top: 75px;
-    /*margin-right: 20px;*/
-    position: relative;
-    /*top: 0;
-    right: 0; /* set the map to align with the right side */
+    margin-top: 70px;
+    margin-right: auto;
+    margin-left:auto;
+    display: block;
 }
 </style>
 <!-- Add jQuery library -->
@@ -45,7 +38,7 @@
       // Tmapv2.Map을 이용하여, 지도가 들어갈 div, 넓이, 높이를 설정합니다.
       map = new Tmapv2.Map("map_div", {
          center : new Tmapv2.LatLng(33.3617, 126.5292),
-         width : "600px", // 지도의 넓이
+         width : "1190px", // 지도의 넓이
          height : "400px", // 지도의 높이
          zoom : 10
       });
