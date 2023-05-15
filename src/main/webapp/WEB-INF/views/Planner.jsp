@@ -80,7 +80,7 @@
 </head>
 <body onload="initTmap()">
    <!-- 상단바 설정하기  -->
-   <%@ include file="navbar.jsp" %>
+   <%@ include file="./include/navbar.jsp" %>
    <div id="map_div"></div>
    <br>
    <div id="sform">

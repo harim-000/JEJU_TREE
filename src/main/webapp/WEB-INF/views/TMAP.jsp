@@ -4,7 +4,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>simpleMap</title>
+
 <style type="text/css">
+#container{
+	display: flex;
+   	justify-content: center;
+    align-items: center;
+}
+
 #sidebar {
     width: 25%; /* adjust this value to change the width of the sidebar */
     height: 100%;
@@ -14,13 +21,16 @@
 }
 
 #map_div {
-    margin-left: 25%; /* this should match the width of the sidebar */
-    width: 75%; /* this is the remaining width */
+	display : flex;
+	justify-content:center;
+    /* margin-left: 25%; /* this should match the width of the sidebar */
+   /* margin-right: 25%; */
+    width: 50%; /* this is the remaining width */
     height: 100%;
     margin-top: 75px;
-    margin-right: 20px;
-    position: absolute;
-    top: 0;
+    /*margin-right: 20px;*/
+    position: relative;
+    /*top: 0;
     right: 0; /* set the map to align with the right side */
 }
 </style>
@@ -35,7 +45,7 @@
       // Tmapv2.Map을 이용하여, 지도가 들어갈 div, 넓이, 높이를 설정합니다.
       map = new Tmapv2.Map("map_div", {
          center : new Tmapv2.LatLng(33.3617, 126.5292),
-         width : "100%", // 지도의 넓이
+         width : "600px", // 지도의 넓이
          height : "400px", // 지도의 높이
          zoom : 10
       });
@@ -108,11 +118,14 @@
 </head>
 <body onload="initTmap()">
    <!-- 상단바 설정하기  -->
-   <%@ include file="navbar.jsp" %>
+   <%@ include file="./include/navbar.jsp" %>
    <!-- 사이드바 설정하기 -->
-   <%@ include file="sidebar.jsp" %>
-   <!-- 맵 생성 실행 -->
-   <div id="map_div"></div>
+   <div id = "container">
+	   <%@ include file="./include/sidebar1.jsp" %>
+	   <!-- 맵 생성 실행 -->
+	   <div id="map_div"></div>
+	    <%@ include file="./include/sidebar2.jsp" %>
+   </div>
    <br>
 </body>
 </html>
