@@ -1,24 +1,35 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>simpleMap</title>
 <style type="text/css">
+#sidebar {
+    width: 25%; /* adjust this value to change the width of the sidebar */
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    z-index: 1; /* add this line to ensure the sidebar appears above the map */
+}
+
 #map_div {
-   margin-top: 70px;
+    margin-left: 25%; /* this should match the width of the sidebar */
+    width: 75%; /* this is the remaining width */
+    height: 100%;
+    margin-top: 75px;
+    margin-right: 20px;
+    position: absolute;
+    top: 0;
+    right: 0; /* set the map to align with the right side */
 }
 </style>
 <!-- Add jQuery library -->
-<script
-   src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-   src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=857KZ5RE6M1rUW7d6KPzX3cF1f6pgN017jnAkmdJ"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=857KZ5RE6M1rUW7d6KPzX3cF1f6pgN017jnAkmdJ"></script>
 <script type="text/javascript">
    var map;
    var infoWindow1, infoWindow2;
-
    function initTmap() {
       // map 생성
       // Tmapv2.Map을 이용하여, 지도가 들어갈 div, 넓이, 높이를 설정합니다.
@@ -28,7 +39,6 @@
          height : "400px", // 지도의 높이
          zoom : 10
       });
-
       // 비자림 Marker 객체 생성.
       var marker2 = new Tmapv2.Marker(
             {
@@ -37,12 +47,8 @@
                map : map
             //Marker가 표시될 Map 설정..
             });
-
       // 비자림 Marker에 클릭이벤트 등록.
-      marker2
-            .addListener(
-                  "click",
-                  function(evt) {
+      marker2.addListener("click",function(evt) {
                      var content = "<form id='markerDataForm' action='<%=request.getContextPath()%>/Planner.go' method='post'>"
                            + "<input type='hidden' name='title' value='비자림'>"
                            + "<input type='hidden' name='address' value='제주특별자치도 서귀포시 성산읍 일출로 284-12'>"
@@ -50,6 +56,7 @@
                            + "<div class='img-box' style='width: 110px; height: 90px; border-radius: 10px; background: #f5f5f5 url(resources/images/markerbackground/jeju2.jpg) no-repeat center; background-size: cover;'></div>"
                            + "<div class='info-box' style='margin-left : 10px'>"
                            + "<p style='margin-bottom: 7px;'>"
+                           + "<button id='selectBtn' type='submit'>Select</button>" // 이 줄을 수정했습니다. 버튼의 type을 'submit'으로 변경하였습니다.
                            + "<span class='tit' style=' font-size: 16px; font-weight: bold;'>비자림</span>"
                            + "<a href='http://tmapapi.sktelecom.com/' target='_blank' class='link' style='color: #3D6DCC; font-size: 13px; margin-left: 10px;'>홈페이지</a></p>"
                            + "<p>"
@@ -58,7 +65,6 @@
                            + "<p>"
                            + "<span class='old-addr' style='color: #707070;'>(지번) 저동1가 114</span>"
                            + "</p>"
-                           + "<button id='selectBtn' type='submit'>Select</button>" // 이 줄을 수정했습니다. 버튼의 type을 'submit'으로 변경하였습니다.
                            + "</div>"
                            + "<a href='javascript:void(0)' onclick='onClose2()' class='btn-close' style='position: absolute; top: 10px; right: 10px; display: block; width: 15px; height: 15px; background: url(resources/images/sample/btn-close-b.svg) no-repeat center;'></a>"
                            + "</div>" + "</form>";
@@ -71,29 +77,42 @@
                         map : map
                      //Popup이 표시될 맵 객체
                      });
-
                      $(document).on('click', '#selectBtn', function(e) {
                         e.preventDefault();
                         $('#markerDataForm').submit();
                      });
-
                   }); // 제주 비자림 Marker에 클릭이벤트 종료.
    }
-
    //닫기 아이콘 클릭시 호출되는 함수.
    function onClose2() {
-
       infoWindow2.setVisible(false);
-
    }
+   
+   $(document).ready(function() {
+	    $('.location').click(function() {
+	        var lat = $(this).data('lat');
+	        var lng = $(this).data('lng');
+	        
+	        // Create a new marker
+	        var marker = new Tmapv2.Marker({
+	            position: new Tmapv2.LatLng(lat, lng),
+	            map: map
+	        });
+
+	        // Center the map on the new marker
+	        map.setCenter(new Tmapv2.LatLng(lat, lng));
+	    });
+	});
+
 </script>
 </head>
 <body onload="initTmap()">
-   <!-- 맵 생성 실행 -->
    <!-- 상단바 설정하기  -->
-
+   <%@ include file="navbar.jsp" %>
+   <!-- 사이드바 설정하기 -->
+   <%@ include file="sidebar.jsp" %>
+   <!-- 맵 생성 실행 -->
    <div id="map_div"></div>
    <br>
-
 </body>
 </html>

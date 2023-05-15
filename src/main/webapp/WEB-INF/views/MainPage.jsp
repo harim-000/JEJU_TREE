@@ -7,47 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIF 슬라이드</title>
     <style>
-    
         .container {
-        
             display: flex;
             justify-content: center;
             align-items: center;
             height: calc(100vh - 80px); /* 상단 여백 조정 */
-            
         }
-        
         .container-insta-hot, .container-steady-hot, .container-photo-hot {
   			margin: 10px 0;
 		}
-
         .slider {
             width: 100%;
             position: relative;
             overflow: hidden;
         }
-
         .slides {
             display: flex;
             transition: transform 0.6s ease-in-out;
         }
-
         .slide {
             flex-shrink: 0;
             width: 100%;
             height: 540px; /* 슬라이드의 크기 조정 */
             object-fit: cover;
         }
-
         .intro-text {
-        
             width: 50%;
             padding-right: 20px;
-            
         }
-
         .arrows {
-        
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -55,33 +43,24 @@
             display: flex;
             justify-content: space-between;
             z-index: 10;
-            
         }
-
         .prev, .next {
-        
             cursor: pointer;
             font-size: 24px;
             padding: 8px;
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
-            border-radius: 50%;
-            
+            border-radius: 80%;
         }
-
         .dots {
-        
             position: absolute;
             bottom: 10px;
             display: flex;
             justify-content: center;
             width: 100%;
             z-index: 10;
-            
         }
-
         .dot {
-        
             cursor: pointer;
             height: 10px;
             width: 10px;
@@ -89,27 +68,18 @@
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 50%;
             display: inline-block;
-            
         }
-
         .dot.active {
-        
             background-color: rgba(255, 255, 255, 0.9);
-            
         }
-        
         .button-container {
-        
             margin-top: 20px;
             display: flex;
             justify-content: center;
             flex-direction: column; /* 버튼을 세로로 나열 */
             align-items: center; /* 버튼을 수직으로 가운데 정렬 */
-            
         }
-
         .btn {
-        
             font-size: 18px;
             width: 350px; /* 버튼 너비 지정 */
             height: 45px; /* 버튼 높이 지정 */
@@ -124,17 +94,11 @@
             display: flex; /* 추가 */
             justify-content: center; /* 추가 */
             align-items: center; /* 추가 */
-            
         }
-
         .btn:hover {
-        
             background-color: #0056b3;
-            
         }
-        
 		.to-top {
-		
     		position: fixed;
    		    bottom: 20px;
     		right: 20px;
@@ -145,22 +109,15 @@
     		color: white;
     		border-radius: 50%;
     		cursor: pointer;
-    		
 		}
-		
         .insta-hot {
-        
             display: flex;
             flex-direction: column;
             align-items: center;
-            
         }
-		
     </style>
-    
     <script type="text/javascript">
         let slideIndex = 0;
-
         function slideGifs() {
             const slides = document.querySelectorAll('.slide');
             for (let i = 0; i < slides.length; i++) {
@@ -174,7 +131,6 @@
             updateDots();
             setTimeout(slideGifs, 4000); // 이미지 변경 시간 (3000ms = 3초)
         }
-
         function updateDots() {
             const dots = document.querySelectorAll('.dot');
             for (let i = 0; i < dots.length; i++) {
@@ -182,7 +138,6 @@
             }
             dots[slideIndex - 1].classList.add('active');
         }
-
         function moveToSlide(n) {
             clearTimeout(slideGifs);
             slideIndex = slideIndex + n;
@@ -199,18 +154,14 @@
             slides[slideIndex - 1].style.display = 'block';
             updateDots();
         }
-
         function currentSlide(n) {
             clearTimeout(slideGifs);
             moveToSlide(n - slideIndex);
         }
-        
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        
     </script>
-    
     <!-- 폰트어썸 cdn링크 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -229,10 +180,10 @@
             <p style="font-size:30px;">
             
                 	손쉽게 일정을  조정하세요.
-            
+                	
             </p>
             <div class="button-container">
-                <button class="btn">일정짜기</button>
+            	<button class="btn" onclick="location.href='tmap.go'">일정 만들기</button>
                 <button class="btn">이용 가이드</button>
             </div>
         </div>

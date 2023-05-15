@@ -36,7 +36,7 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="#"> <font size="6">MY</font> <font size="4">JEJU</font> </a>
+        <a href="<%=request.getContextPath()%>/MainPage.go"> <font size="6">MY</font> <font size="4">JEJU</font> </a>
         <a href="#"><font size="5">LOGIN</font></a>
     </div>
 </body>
