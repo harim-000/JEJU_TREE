@@ -165,6 +165,6 @@
     
     <span class="to-top" onclick="scrollToTop()">&#9650;</span>
 	</div>
-	<%@ include file="./include/footer.jsp" %>
 	</div>
+	<%@ include file="./include/footer.jsp" %>
 </html>
