@@ -1,16 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
-<<<<<<< HEAD
-=======
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
->>>>>>> a58a918210d2a462d514ce10c92eae037d5d34f2
+
 <!DOCTYPE html>  
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/include/sidebar.css">
+	<%-- <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/include/sidebar.css"> --%>
     <title>사이드바1</title>
 </head>
 <body>
@@ -28,16 +26,7 @@
  	</div>
  	<div class = "sidebar1_content">
      	<div class = "search_Keyword">
-<<<<<<< HEAD
-     		<form id = "sidebar_search_form">
-	     		<input placeholder="검색어를 입력하세요">&nbsp;&nbsp;<button type="submit" form="sidebar_search_form">검색하기</button>
-     		</form>
-     	</div>
-     	<div class = "search_result1">
-     		<h4 class = "search_title">최근검색어</h4>
-     		<span class="btn">모두지우기</span>
-     	</div>
-=======
+
      		<form id = "sidebar_search_form" method = "post"  action="<%=request.getContextPath() %>/search_insertok.go">
 	     		<input class = "search_keyword" name="search_keyword" placeholder="검색어를 입력하세요" value = "">
 	     		&nbsp;&nbsp;<input type="submit" value ="검색">
@@ -66,7 +55,6 @@
 	      </div>
 	      <!-- More locations can be added here -->
   		 </div> --%>
->>>>>>> a58a918210d2a462d514ce10c92eae037d5d34f2
      </div>
  </div>
 </body>

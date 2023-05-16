@@ -4,46 +4,63 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- css -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
- 
-<!-- js -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-
+<!-- datepicker -->
+<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ -->
 <title>Insert title here</title>
 </head>
-<body>
  <body>
     
-    
-    <input type='text' class="form-control linkedCalendars" placeholder="날짜 선택"/>
-<span class="input-group-text calendar-icon">
-<i data-feather="calendar" class="feather-sm"></i>
-</span>
-    
-    <script type="text/javascript">
-    
-    $('.linkedCalendars').daterangepicker({
-    	linkedCalendars: false,
-    	"locale":{
-    	"format": "YYYY-MM-DD",
-    	"separator": " ~ ",
-    	"applyLabel": "적용",
-    	"cancelLabel": "취소",
-    	"fromLabel": "From",
-    	"toLabel": "To",
-    	"customRangeLabel": "Custom",
-    	"daysOfWeek": ["일","월", "화", "수", "목", "금", "토"],
-    	"monthNames": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"] },
-    	}, function (start, end, label) {
-    	console.log('선택된 날짜: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-    	});
+<label for="from">From</label>
+<div id="from" ></div>
+<input type="hidden" id="from" name="from">
+<label for="to">to</label>
+<div id="to" ></div>
+<input type="hidden" id="to" name="to">
+ 
+ 
+<!-- 
 
-    	 
-</script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+
+
+<script>
+   $(document).ready(function() {
+	   console.log(1111);
+		  
+	    var dateFormat = "mm/dd/yy",
+	      from = $( "#from" ).datepicker({
+	          defaultDate: "+1w",
+	          changeMonth: true,
+	          numberOfMonths: 1
+	        })
+	        .on( "change", function() {
+	          to.datepicker( "option", "minDate", getDate( this ) );
+	        }),
+	      to = $( "#to" ).datepicker({
+	        defaultDate: "+1w",
+	        changeMonth: true,
+	        numberOfMonths: 1
+	      })
+	      .on( "change", function() {
+	        from.datepicker( "option", "maxDate", getDate( this ) );
+	      });
+	 
+	    function getDate( element ) {
+	      var date;
+	      try {
+	        date = $.datepicker.parseDate( dateFormat, element.value );
+	      } catch( error ) {
+	        date = null;
+	      }
+	 
+	      return date;
+	    }
+   });
+  
+  </script>
     
-    </body>
 </body>
 </html>

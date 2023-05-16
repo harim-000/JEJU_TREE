@@ -56,4 +56,9 @@ public class searchController {
 	    return "MainPage";
 	}
 	
+	@RequestMapping("sidebar2.go")
+	public String sidebar2() {
+		return "include/sidebar2";
+	}
+	
 }

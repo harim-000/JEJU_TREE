@@ -6,10 +6,17 @@
 <title>simpleMap</title>
 
 <style type="text/css">
+
+
+
 #container{
 	display: flex;
    	justify-content: center;
     align-items: center;
+    height: 50%;
+    width: 100%;
+    position: relative;
+    z-index: 1; /* container2 보다 앞에 표시되도록 설정 */
 }
 
 #sidebar {
@@ -26,11 +33,28 @@
     margin-left:auto;
     display: block;
 }
+
+
+#container2{
+	 display: block;
+   justify-content: center;
+   align-items: center;
+   height: 50%;
+   width: 100%;
+   position: absolute; /* 추가: container2를 절대적인 위치로 설정 */
+   bottom: 0; /* 추가: container 하단에 고정 */
+}
 </style>
 <!-- Add jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=857KZ5RE6M1rUW7d6KPzX3cF1f6pgN017jnAkmdJ"></script>
-<script type="text/javascript">
+
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/include/sidebar.css">
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/include/sidebar_ajax.js"></script>
+  <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/include/sidebar.js"></script>
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/include/footer.css">
+  
+ <script type="text/javascript">
    var map;
    var infoWindow1, infoWindow2;
    function initTmap() {
@@ -110,12 +134,7 @@
 </script>
 </head>
 <body onload="initTmap()">
-<<<<<<< HEAD
-	<!-- 상단바 설정  -->
-	<%@ include file="./include/navbar.jsp"%>
-	<div id="map_div"></div>
-	<p id="result" />
-=======
+ 
    <!-- 상단바 설정하기  -->
    <%@ include file="./include/navbar.jsp" %>
    <!-- 사이드바 설정하기 -->
@@ -123,9 +142,16 @@
 	   <%@ include file="./include/sidebar1.jsp" %>
 	   <!-- 맵 생성 실행 -->
 	   <div id="map_div"></div>
-	    <%@ include file="./include/sidebar2.jsp" %>
+	   <%@ include file="./include/sidebar2.jsp" %>
+	    
+	    
+	    
    </div>
+   
    <br>
->>>>>>> a58a918210d2a462d514ce10c92eae037d5d34f2
+<%--   <div id="container2">
+     <%@ include file="./calendar/weekly.jsp" %>
+   </div> --%>
+   <%@ include file="./include/footer.jsp" %>
 </body>
 </html>
