@@ -78,12 +78,10 @@
                 <i class="fa-solid fa-plane fa-3x" style="position:relative; top:-10px; left:-135px;"></i>
             </h2>
             <p style="font-size:30px;">
-            
                 	손쉽게 일정을  조정하세요.
-            
             </p>
             <div class="button-container">
-                <button class="btn">일정짜기</button>
+                <button class="btn" onclick="location.href='tmap.go'">일정 만들기</button>
                 <button class="btn">이용 가이드</button>
             </div>
         </div>
