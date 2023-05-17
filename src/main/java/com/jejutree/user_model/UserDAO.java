@@ -10,4 +10,6 @@ public interface UserDAO {
 	List<UserDTO> getUserList();
 	
 	int deleteUser(String user_id);
+	//로그인시 정보 조회
+	UserDTO getuser(String user_id);
 }

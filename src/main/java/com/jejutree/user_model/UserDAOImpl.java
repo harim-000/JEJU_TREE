@@ -28,5 +28,12 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public UserDTO getuser(String user_id) {
+		return this.sqlSession.selectOne("UserInfo",user_id);
+	}
+
+	
 	
 }
