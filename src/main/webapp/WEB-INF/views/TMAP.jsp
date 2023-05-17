@@ -74,7 +74,7 @@
             });
       // 비자림 Marker에 클릭이벤트 등록.
       marker2.addListener("click",function(evt) {
-                     var content = "<form id='markerDataForm' action='<%=request.getContextPath()%>/weekly_calendar.go' method='post'>"
+                     var content = "<form id='markerDataForm' action='<%=request.getContextPath()%>/plans_insert_ok.go' method='post'>"
                            + "<input type='hidden' name='title' value='비자림'>"
                            + "<input type='hidden' name='address' value='제주특별자치도 서귀포시 성산읍 일출로 284-12'>"
                            + "<div class='m-pop' style='position: static; top: 180px; left : 320px; display: flex; font-size: 14px; box-shadow: 5px 5px 5px #00000040; border-radius: 10px; width : 400px; height:100px; background-color: #FFFFFF; align-items: center; padding: 5px;'>"

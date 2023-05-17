@@ -37,7 +37,7 @@ public class PlansController {
 		if (check > 0) {
 			out.println("<script>");
 			out.println("alert(' 플랜 등록 성공!!! ')");
-			out.println("location.href='emp_list.go'");
+			out.println("location.href=''");
 			out.println("</script>");
 		} else {
 			out.println("<script>");
