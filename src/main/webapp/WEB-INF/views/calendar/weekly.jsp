@@ -149,7 +149,7 @@ calendar.deleteSchedule(eventData.schedule.id, eventData.schedule.calendarId);
     {
         id: '4',
         calendarId: '4',
-        title: '일정4',
+        title: '${title }',
         category: 'time',
         dueDateClass: '',
         start: '2023-05-19T13:30:00+09:00',

@@ -7,8 +7,6 @@
 
 <style type="text/css">
 
-
-
 #container{
 	display: flex;
    	justify-content: center;
@@ -76,7 +74,7 @@
             });
       // 비자림 Marker에 클릭이벤트 등록.
       marker2.addListener("click",function(evt) {
-                     var content = "<form id='markerDataForm' action='<%=request.getContextPath()%>/Planner.go' method='post'>"
+                     var content = "<form id='markerDataForm' action='<%=request.getContextPath()%>/plans_insert_ok.go' method='post'>"
                            + "<input type='hidden' name='title' value='비자림'>"
                            + "<input type='hidden' name='address' value='제주특별자치도 서귀포시 성산읍 일출로 284-12'>"
                            + "<div class='m-pop' style='position: static; top: 180px; left : 320px; display: flex; font-size: 14px; box-shadow: 5px 5px 5px #00000040; border-radius: 10px; width : 400px; height:100px; background-color: #FFFFFF; align-items: center; padding: 5px;'>"
@@ -135,23 +133,16 @@
 </head>
 <body onload="initTmap()">
  
-   <!-- 상단바 설정하기  -->
-   <%@ include file="./include/navbar.jsp" %>
-   <!-- 사이드바 설정하기 -->
-   <div id = "container">
-	   <%@ include file="./include/sidebar1.jsp" %>
-	   <!-- 맵 생성 실행 -->
-	   <div id="map_div"></div>
-	   <%@ include file="./include/sidebar2.jsp" %>
-	    
-	    
-	    
-   </div>
-   
-   <br>
-<%--   <div id="container2">
-     <%@ include file="./calendar/weekly.jsp" %>
-   </div> --%>
-   <%@ include file="./include/footer.jsp" %>
+<!-- 상단바 설정하기  -->
+<%@ include file="./include/navbar.jsp" %>
+<!-- 사이드바 설정하기 -->
+<div id = "container">
+<%@ include file="./include/sidebar1.jsp" %>
+<!-- 맵 생성 실행 -->
+<div id="map_div"></div>
+<%@ include file="./include/sidebar2.jsp" %>
+</div>
+<br>
+<div align="center"><%@ include file="./include/footer.jsp" %></div>
 </body>
 </html>
