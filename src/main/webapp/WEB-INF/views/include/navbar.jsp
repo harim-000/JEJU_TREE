@@ -15,7 +15,7 @@
     <div class="navbar">
         <a href="<%=request.getContextPath()%>/"> <font size="6">MY</font> <font size="4">JEJU</font> </a>
         <a href="login_page.go"><font size="5">LOGIN</font></a>
-        <a href="weekly_calendar.go"><font size="5">주간</font></a>
+        <a href="mypage.go"><font size="5">MyPage</font></a>
     </div>
 </body>
 </html>
