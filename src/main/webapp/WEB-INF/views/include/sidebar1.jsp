@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
   pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>  
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/include/sidebar.css">
+	<%-- <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/include/sidebar.css"> --%>
     <title>사이드바1</title>
 </head>
 <body>
@@ -25,6 +26,7 @@
  	</div>
  	<div class = "sidebar1_content">
      	<div class = "search_Keyword">
+
      		<form id = "sidebar_search_form" method = "post"  action="<%=request.getContextPath() %>/search_insertok.go">
 	     		<input class = "search_keyword" name="search_keyword" placeholder="검색어를 입력하세요" value = "">
 	     		&nbsp;&nbsp;<input type="submit" value ="검색">
