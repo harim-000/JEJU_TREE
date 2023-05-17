@@ -14,11 +14,18 @@
 <body>
     <div class="navbar">
         <a href="<%=request.getContextPath()%>/MainPage.go"> <font size="6">MY</font> <font size="4">JEJU</font> </a>
-        <c:if test="${!empty KakaoInfo}">
-        	<a href="logout.go"><font size="5">LOGOUT</font></a>
-        	${KakaoInfo.get("access_Token")}	
+        <c:set var = "kakao_session" value="${KakaoInfo}"/>
+        <c:set var = "normal_session" value="${user_id}"/>
+        <c:if test="${not empty KakaoInfo or not empty user_id}">
+        	<c:if test="${!empty user_id}">
+        		${user_id}
+        		<a href="normal_logout.go"><font size="5">LOGOUT</font></a>
+        	</c:if>
+        	<c:if test="${empty user_id}">
+        		<a href="logout.go"><font size="5">LOGOUT</font></a>
+        	</c:if>
         </c:if>
-        <c:if test="${empty KakaoInfo}">
+        <c:if test="${empty KakaoInfo and empty user_id}">
          	<a href="login_page.go"><font size="5">LOGIN</font></a>
         </c:if>
     </div>

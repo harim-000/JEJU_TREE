@@ -13,4 +13,5 @@ public interface SearchDAO {
 	int deleteKeyword(int no);
 	
 	
+	
 }
