@@ -8,7 +8,9 @@ public class WeeklyController {
 	
 	@RequestMapping("weekly_calendar.go")
 	public String weekly() {
-		return "weekly";
+		return "calendar/weekly";
 	}
+	
+	
 
 }
