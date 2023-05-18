@@ -7,4 +7,5 @@ public interface UserPlansDAO {
 	
 	int insertPlans(UserPlansDTO dto);
 
+
 }

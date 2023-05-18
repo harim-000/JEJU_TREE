@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
- <mapper namespace="userplansDao">
-	<insert id="addplans" parameterType="userplansDto">
-		INSERT INTO user_plans(user_id, travel_plan_id, start_date, end_date, notes, created_at, updated_at)
-		VALUES(#{userId}, #{travelPlanId}, #{startDate}, #{endDate}, #{notes}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-	</insert>
- </mapper>
- 
+<mapper namespace="com.jejutree.dao.UserPlansDAO">
+<insert id="addplans" parameterType="com.jejutree.plans_model.UserPlansDTO">
+    INSERT INTO travel_plans(user_id, title, description, start_date, end_date, location, created_at, updated_at)
+    VALUES(#{userId}, #{title }, #{description}, #{startDate}, #{endDate}, #{location}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+</insert>
+</mapper>

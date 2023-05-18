@@ -28,13 +28,4 @@ public class HomeController {
       return "TMAP";
    
    }
-   @RequestMapping(value = "/Planner.go", method = RequestMethod.POST)
-   public String handleMarkerData(@RequestParam("title") String title,@RequestParam("address") String address,Model model) {
-       // 데이터를 Model에 추가하여 JSP 페이지에서 사용할 수 있도록 합니다.
-       model.addAttribute("title", title);
-       model.addAttribute("address", address);
-
-       return "Planner";
-   }
-   
 }

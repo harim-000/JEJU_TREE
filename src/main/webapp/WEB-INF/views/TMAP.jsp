@@ -74,25 +74,29 @@
             });
       // 비자림 Marker에 클릭이벤트 등록.
       marker2.addListener("click",function(evt) {
-                     var content = "<form id='markerDataForm' action='<%=request.getContextPath()%>/plans_insert_ok.go' method='post'>"
-                           + "<input type='hidden' name='title' value='비자림'>"
-                           + "<input type='hidden' name='address' value='제주특별자치도 서귀포시 성산읍 일출로 284-12'>"
-                           + "<div class='m-pop' style='position: static; top: 180px; left : 320px; display: flex; font-size: 14px; box-shadow: 5px 5px 5px #00000040; border-radius: 10px; width : 400px; height:100px; background-color: #FFFFFF; align-items: center; padding: 5px;'>"
-                           + "<div class='img-box' style='width: 110px; height: 90px; border-radius: 10px; background: #f5f5f5 url(resources/images/markerbackground/jeju2.jpg) no-repeat center; background-size: cover;'></div>"
-                           + "<div class='info-box' style='margin-left : 10px'>"
-                           + "<p style='margin-bottom: 7px;'>"
-                           + "<button id='selectBtn' type='submit'>Select</button>" // 이 줄을 수정했습니다. 버튼의 type을 'submit'으로 변경하였습니다.
-                           + "<span class='tit' style=' font-size: 16px; font-weight: bold;'>비자림</span>"
-                           + "<a href='http://tmapapi.sktelecom.com/' target='_blank' class='link' style='color: #3D6DCC; font-size: 13px; margin-left: 10px;'>홈페이지</a></p>"
-                           + "<p>"
-                           + "<span class='new-addr'>제주특별자치도 서귀포시 성산읍 일출로 284-12</span>"
-                           + "</p>"
-                           + "<p>"
-                           + "<span class='old-addr' style='color: #707070;'>(지번) 저동1가 114</span>"
-                           + "</p>"
-                           + "</div>"
-                           + "<a href='javascript:void(0)' onclick='onClose2()' class='btn-close' style='position: absolute; top: 10px; right: 10px; display: block; width: 15px; height: 15px; background: url(resources/images/sample/btn-close-b.svg) no-repeat center;'></a>"
-                           + "</div>" + "</form>";
+    	  var content = "<form id='markerDataForm' action='<%=request.getContextPath()%>/plans_insert_ok.go' method='post'>"
+    	      + "<input type='hidden' name='title' value='비자림'>"
+    	      + "<input type='hidden' name='address' value='제주특별자치도 서귀포시 성산읍 일출로 284-12'>"
+    	      + "<input type='hidden' name='location' value='비자림'>"
+    	      + "<input type='hidden' name='title' value='첫출발'>"
+    	      + "<div class='m-pop' style='position: static; top: 180px; left : 320px; display: flex; font-size: 14px; box-shadow: 5px 5px 5px #00000040; border-radius: 10px; width : 400px; height:100px; background-color: #FFFFFF; align-items: center; padding: 5px;'>"
+    	      + "<div class='img-box' style='width: 110px; height: 90px; border-radius: 10px; background: #f5f5f5 url(resources/images/markerbackground/jeju2.jpg) no-repeat center; background-size: cover;'></div>"
+    	      + "<div class='info-box' style='margin-left : 10px'>"
+    	      + "<p style='margin-bottom: 7px;'>"
+    	      + "<button id='selectBtn' type='submit'>Select</button>"
+    	      + "<span class='tit' style=' font-size: 16px; font-weight: bold;'>비자림</span>"
+    	      + "<a href='http://tmapapi.sktelecom.com/' target='_blank' class='link' style='color: #3D6DCC; font-size: 13px; margin-left: 10px;'>홈페이지</a></p>"
+    	      + "<p>"
+    	      + "<span class='new-addr'>제주특별자치도 서귀포시 성산읍 일출로 284-12</span>"
+    	      + "</p>"
+    	      + "<p>"
+    	      + "<span class='old-addr' style='color: #707070;'>(지번) 저동1가 114</span>"
+    	      + "</p>"
+    	      + "<p>Start Date: <input type='date' name='startDate'></p>"  // Start Date input field
+    	      + "<p>End Date: <input type='date' name='endDate'></p>"  // End Date input field
+    	      + "</div>"
+    	      + "<a href='javascript:void(0)' onclick='onClose2()' class='btn-close' style='position: absolute; top: 10px; right: 10px; display: block; width: 15px; height: 15px; background: url(resources/images/sample/btn-close-b.svg) no-repeat center;'></a>"
+    	      + "</div>" + "</form>";
                      // Popup 객체 생성.
                      infoWindow2 = new Tmapv2.InfoWindow({
                         position : new Tmapv2.LatLng(33.49149305,
