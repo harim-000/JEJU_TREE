@@ -5,8 +5,33 @@
  	
  	
  	
- 
- 
+  function getSearchCont() {
+     $.ajax({
+         url: 'recent_search_list.go',
+         type: "POST", 
+         dataType: "json",
+         contentType: "application/json; charset=utf-8;",
+         success: function (data) {
+              var dataList = data.key; // 데이터 리스트를 가져옵니다.
+			  var $searchList = $('#searchList'); // 리스트를 표시할 요소를 선택합니다.
+			
+			  $searchList.empty(); // 기존 리스트를 초기화합니다.
+			
+			  $.each(dataList, function (index, element) {
+			    var keyword = element.search_term;
+			    var $li = $('<li>').text(keyword); // 각 항목을 <li> 태그로 생성합니다.
+			    $searchList.append($li); // 리스트에 추가합니다.
+        });
+           
+            console.log(data);
+         },
+         error :function (jqXHR, textStatus, errorThrown){
+            
+             alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
+         }
+     });
+ }
+  
  
  function openMenu(openbtn_className) {
 	

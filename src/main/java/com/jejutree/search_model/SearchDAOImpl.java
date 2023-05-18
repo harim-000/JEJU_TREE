@@ -13,7 +13,7 @@ public class SearchDAOImpl implements SearchDAO{
 	
 	@Override
 	public int insertSearch(SearchDTO dto) {
-		return this.sqlSession.insert("search_insert", dto);
+		return this.sqlSession.update("search_insert", dto);
 	}
 
 	@Override
@@ -26,5 +26,8 @@ public class SearchDAOImpl implements SearchDAO{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
+
 
 }

@@ -18,4 +18,6 @@ public class UserDTO {
 	String user_image;
 	String user_like_keyword;
 	String user_phone;
+	String mailKey;
+	String mailAuth;
 }

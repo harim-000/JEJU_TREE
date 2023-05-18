@@ -27,9 +27,10 @@
 	    	<a class="closebtn2" onclick="closeMenu(this.className)">X</a>
 		</div>
 		<div class = "sidebar2_content">
-          	<div class = "search_Keyword">
+          	<div class = "search_Keyword"  onclick="getSearchCont()">
           		검색어를 입력하세요
           		<input placeholder="검색어를 입력하세요">
+          		
           	</div>
           	<div class = "search_result">
           	</div>

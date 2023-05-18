@@ -5,10 +5,24 @@
   
  <mapper namespace="userDao">
  	<insert id="UserJoin" parameterType="userDto">
- 		insert into sys.user values(#{user_id},#{user_pwd},#{user_email},#{user_nickname},default,default,default,#{user_phone})
+ 		insert into sys.user values(#{user_id},#{user_pwd},#{user_email},#{user_nickname},default,default,default,#{user_phone}, #{mailKey}, 0)
  	</insert>
  	<select id="UserInfo" parameterType="String" resultType="userDto">
  		select * from sys.user where user_id = #{user_id}
  	</select>
+ 	<update id="updateMailKey" parameterType="userDto">
+       update user set mailKey = #{mailKey} where user_email = #{user_email} and user_id = #{user_id}
+   </update>
+   <select id="checkEmail" parameterType="String" resultType="int">
+      select count(*) from user where user_email = #{user_email}
+   </select>
+   <!-- 메일 인증을 하면 mail_auth 컬럼을 기본값 0에서 1로 바꿔 로그인을 허용 -->
+   <update id="updateMailAuth" parameterType="userDto">
+       update user set mailAuth=1 where user_email = #{user_email} and mailKey = #{mailKey}
+   </update>
+   <!-- 이메일 인증을 안 했으면 0을 반환, 로그인 시 인증했나 안 했나 체크하기 위함 -->
+   <select id="emailAuthFail" parameterType="String" resultType="int">
+       select count(*) from user where user_id = #{user_id} and mailAuth = 1
+   </select>
  </mapper>
  

@@ -44,9 +44,12 @@
 }
 </style>
 <!-- Add jQuery library -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=857KZ5RE6M1rUW7d6KPzX3cF1f6pgN017jnAkmdJ"></script>
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/include/sidebar.css">
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/include/sidebar_ajax.js"></script>
   <script type="text/javascript" src="<%=request.getContextPath()%>/resources/js/include/sidebar.js"></script>
@@ -141,8 +144,10 @@
 <!-- 맵 생성 실행 -->
 <div id="map_div"></div>
 <%@ include file="./include/sidebar2.jsp" %>
+
 </div>
 <br>
 <div align="center"><%@ include file="./include/footer.jsp" %></div>
+
 </body>
 </html>

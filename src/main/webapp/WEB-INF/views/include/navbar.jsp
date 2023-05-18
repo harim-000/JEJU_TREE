@@ -28,7 +28,6 @@
         <c:if test="${empty KakaoInfo and empty user_id}">
          	<a href="login_page.go"><font size="5">LOGIN</font></a>
         </c:if>
->>>>>>> 8bb81b4cd9827ab65a35d7cc265c38afe4c091e1
     </div>
 </body>
 </html>

@@ -34,6 +34,26 @@ public class UserDAOImpl implements UserDAO {
 		return this.sqlSession.selectOne("UserInfo",user_id);
 	}
 
+	@Override
+	public int checkEmail(String email) {
+		return this.sqlSession.selectOne("checkEmail", email);
+	}
+
+	@Override
+	public int updateMailKey(UserDTO dto) throws Exception {
+		return this.sqlSession.update("updateMailKey", dto);
+	}
+
+	@Override
+	public int updateMailAuth(UserDTO dto) throws Exception {
+		return this.sqlSession.update("updateMailAuth", dto);
+	}
+
+	@Override
+	public int emailAuthFail(String id) throws Exception {
+		 return this.sqlSession.selectOne("emailAuthFail", id);
+	}
+
 	
 	
 }

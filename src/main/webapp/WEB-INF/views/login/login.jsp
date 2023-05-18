@@ -20,7 +20,7 @@ if (request.getProtocol().equals("HTTP/1.1"))
 			<div id="login_main">
 				<div id="login_title">로그인창</div>
 				<div id="login_main_wrap">
-					<form method="post" action="<%=request.getContextPath() %>/user_login.do">
+					<form method="post" action="<%=request.getContextPath() %>/user_login.go">
 							<input type="text" id="user_id" name="user_id" placeholder="아이디">
 							<br>
 							<input type="password" id="user_pwd" name="user_pwd" placeholder="비밀번호">

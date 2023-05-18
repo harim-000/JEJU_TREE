@@ -1,9 +1,3 @@
 /**
  * 
  */
- 
-function get_recentSearch() {
-  
-}
-
-

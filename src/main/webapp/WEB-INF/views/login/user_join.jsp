@@ -10,7 +10,7 @@
 </head>
 <body>
 <h2>회원가입(일반)</h2>
-<form method="post" name="joinForm" id="joinForm" action="<%=request.getContextPath()%>/user_join_ok.do" onsubmit="return joinFormCheck()">
+<form method="post" name="joinForm" id="joinForm" action="<%=request.getContextPath()%>/user_join_ok.go" onsubmit="return joinFormCheck()">
 	<table>
 		<tr>
 			<th>아이디</th>
@@ -79,22 +79,13 @@
 			<th>이메일</th>
 			<td>
 				<input type="text" name="user_email" id="user_email" onkeyup="autoEmail()" autocomplete="off" placeholder="이메일을 입력해주세요.">
-				<input type="button" id="user_emailSend" value="이메일 인증" onclick="emailSend()">
 				<br>
 				<span id="emailcheck"></span>
 			</td>
 		</tr>
+		
 		<tr>
-			<th>이메일 확인</th>
-			<td>
-				<div class="user_email_check">
-					<input type="text" id="user_email_check" placeholder="이메일 인증코드를 입력해주세요.">
-					<input type="button" id="user_email_checkSubmit" value="인증코드 확인" onclick="emailCheck()">
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2" aling = "center">
+			<td colspan="2" align = "center">
 			<input type = "submit" value = "회원가입">
 			</td>
 		</tr>

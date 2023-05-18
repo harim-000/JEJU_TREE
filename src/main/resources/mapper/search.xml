@@ -6,10 +6,10 @@
   
  <mapper namespace="searchDao">
  	 <select id="getSearchList" resultType="searchDto">
-        SELECT * FROM testDB.search ORDER BY search_log
+        SELECT search_term FROM sys.search_history ORDER BY search_date DESC LIMIT 5
     </select>
  	<insert id="search_insert" parameterType="searchDto">
- 		insert into testDB.search values(null,#{search_keyword},default)
+ 		insert into search_history (user_id, search_term, search_date) values (#{user_id}, #{search_term}, now())
  	</insert>
  </mapper>
  
