@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserPlansDTO {
     private int id;
-    private String user_id;
-    private int travel_plan_id;
-    private Date start_date;
-    private Date end_date;
-    private String notes;
-    private Date created_at;
-    private Date updated_at;
-
+    private String userId;
+    private String description;
+    private String title;
+    private String startDate;
+    private String endDate;
+    private String location;
+    private String createdAt;
+    private String updatedAt;
 }

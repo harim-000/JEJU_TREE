@@ -5,10 +5,10 @@
   
  <mapper namespace="userDao">
  	<insert id="UserJoin" parameterType="userDto">
- 		insert into sys.user values(#{user_id},#{user_pwd},#{user_email},#{user_nickname},default,default,default,#{user_phone}, #{mailKey}, 0)
+ 		insert into user values(#{user_id},#{user_pwd},#{user_email},#{user_nickname},default,default,default,#{user_phone})
  	</insert>
  	<select id="UserInfo" parameterType="String" resultType="userDto">
- 		select * from sys.user where user_id = #{user_id}
+ 		select * from user where user_id = #{user_id}
  	</select>
  	<update id="updateMailKey" parameterType="userDto">
        update user set mailKey = #{mailKey} where user_email = #{user_email} and user_id = #{user_id}
