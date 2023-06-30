@@ -34,9 +34,6 @@
 # ✈️ 기능 소개
  ![기능설명도](https://github.com/harim-000/JEJU_TREE/assets/128435396/51822db8-77a3-40fa-82b8-78eb321eb259)
 
- 
-# ✈️ 시연(데모 링크 or 배포링크)
- 
 
 # 🔎 reference(API 주소 등등)
 TMAP API 👉  https://tmapapi.sktelecom.com
